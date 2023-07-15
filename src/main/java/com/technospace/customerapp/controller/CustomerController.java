@@ -1,5 +1,7 @@
 package com.technospace.customerapp.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,6 +26,11 @@ public class CustomerController {
 	@PostMapping("/addcustomer")
 	public String addcustomer(@RequestBody CustomerModel customerModel) {
 	return iCustomer.addcustomer(customerModel);
-}
+	}
+	
+	@GetMapping("/getallcustomer")
+	public List getallcustomer() {
+		return iCustomer.gellallcustomer();
+	}
 
 }
