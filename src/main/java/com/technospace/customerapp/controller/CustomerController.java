@@ -3,6 +3,8 @@ package com.technospace.customerapp.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,9 +32,14 @@ public class CustomerController {
 	return iCustomer.addcustomer(customerModel);
 	}
 	
+	//@GetMapping("/getallcustomer")
+	//public List getallcustomer() {
+		//return iCustomer.gellallcustomer();
+	//}
+	
 	@GetMapping("/getallcustomer")
-	public List getallcustomer() {
-		return iCustomer.gellallcustomer();
+	public ResponseEntity<List<Customer>> getallcustomer() {
+		return new ResponseEntity<List<Customer>>(iCustomer.gellallcustomer(),HttpStatus.ACCEPTED);
 	}
 	@GetMapping("/getcustomer/{cid}")
 	public Customer getcustomerbyid(@PathVariable("cid")int cid) {
