@@ -30,4 +30,10 @@ public class CustomerService implements ICustomer {
 	public List<Customer> gellallcustomer() {
 		return customerRepo.findAll();
 	}
+	@Override
+	public Customer getcustomerbyid(int cid) {
+		// TODO Auto-generated method stub
+		return customerRepo.getCustomerByCid(cid);
+	}
+	
 }

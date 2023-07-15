@@ -11,4 +11,5 @@ public interface ICustomer {
 
 	public String addcustomer(CustomerModel customerModel);
 	public List<Customer>gellallcustomer();
+	public Customer getcustomerbyid(int cid);
 }

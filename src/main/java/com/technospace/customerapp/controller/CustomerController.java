@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.technospace.customerapp.entity.Customer;
 import com.technospace.customerapp.model.CustomerModel;
 import com.technospace.customerapp.service.ICustomer;
 	
@@ -32,5 +34,8 @@ public class CustomerController {
 	public List getallcustomer() {
 		return iCustomer.gellallcustomer();
 	}
-
+	@GetMapping("/getcustomer/{cid}")
+	public Customer getcustomerbyid(@PathVariable("cid")int cid) {
+		return iCustomer.getcustomerbyid(cid);
+	}
 }
