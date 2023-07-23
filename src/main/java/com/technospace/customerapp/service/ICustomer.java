@@ -10,6 +10,6 @@ import com.technospace.customerapp.model.CustomerModel;
 public interface ICustomer {
 
 	public String addcustomer(CustomerModel customerModel);
-	public List<Customer>gellallcustomer();
+	public List<Customer> gellallcustomer();
 	public Customer getcustomerbyid(int cid);
 }
